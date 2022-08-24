@@ -12,8 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnessapp"
-        tools:ignore="Instantiatable"
         tools:targetApi="31">
+        <activity
+            android:name=".register"
+            android:exported="false" />
+        <activity
+            android:name=".main_page"
+            android:exported="false" />
         <activity
             android:name=".ChooseHeight"
             android:exported="false" />

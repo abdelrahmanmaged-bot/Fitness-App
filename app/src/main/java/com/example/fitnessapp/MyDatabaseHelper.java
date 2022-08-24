@@ -3,6 +3,7 @@ package com.example.fitnessapp;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import java.sql.*;
 
 import androidx.annotation.Nullable;
 
@@ -50,6 +51,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(mealTableCreation);
         db.execSQL(foodTableCreation);
         db.execSQL(containsTableCreation);
+
     }
 
     @Override
@@ -61,4 +63,5 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS contains");
         onCreate(db);
     }
+
 }
