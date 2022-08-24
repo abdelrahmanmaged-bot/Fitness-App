@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">fitnessapp</string>
+    <string-array name="activityLevels">
+        <item>No Exercise</item>
+        <item>Little Exercise</item>
+        <item>Moderate Exercise</item>
+        <item>Hard Exercise</item>
+    </string-array>
 </resources>

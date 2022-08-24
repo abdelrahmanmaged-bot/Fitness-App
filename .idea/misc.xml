@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_chooose_weight.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_age.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_age2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_gender.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_gender2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_height.xml" value="0.2427536231884058" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_level.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_choose_weight.xml" value="0.24010416666666667" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_fit_notes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/Fitness-App/app/src/main/res/layout/activity_reg_result.xml" value="0.24010416666666667" />
         <entry key="..\:/android project/app/src/main/res/layout/activity_main.xml" value="0.24230072463768115" />
       </map>
     </option>
