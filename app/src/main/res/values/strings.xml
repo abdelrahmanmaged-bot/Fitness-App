@@ -6,7 +6,6 @@
         <item>Moderate Exercise</item>
         <item>Hard Exercise</item>
     </string-array>
-    <string name="app_name">fitnessapp</string>
     <string name="register">register</string>
     <string name="username">username</string>
     <string name="password">password</string>
