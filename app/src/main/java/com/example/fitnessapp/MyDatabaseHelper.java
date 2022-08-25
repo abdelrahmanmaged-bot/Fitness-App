@@ -98,6 +98,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("insert into contains (foodName,mealName)"+
                 "values ('Strawberry','Fruit Salad')");
 
+        db.execSQL("insert into contains (foodName,mealName)"+
+                "values ('Orange','Fruit Salad')");
+
     }
 
     @Override
