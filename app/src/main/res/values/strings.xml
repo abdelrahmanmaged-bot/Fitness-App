@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">fitnessapp</string>
+    <string-array name="activityLevels">
+        <item>No Exercise</item>
+        <item>Little Exercise</item>
+        <item>Moderate Exercise</item>
+        <item>Hard Exercise</item>
+    </string-array>
+    <string name="register">register</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="sign_in">sign in</string>
+    <string name="login">login</string>
 </resources>

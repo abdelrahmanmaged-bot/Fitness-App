@@ -14,7 +14,31 @@
         android:theme="@style/Theme.Fitnessapp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".EnterName"
+            android:exported="false" />
+        <activity
+            android:name=".register"
+            android:exported="false" />
+        <activity
+            android:name=".main_page"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseHeight"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseWeight"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseActivityLevel"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseAge"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseGender"
+            android:exported="false" />
+        <activity
+            android:name=".Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
