@@ -52,6 +52,52 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(foodTableCreation);
         db.execSQL(containsTableCreation);
 
+        //////////////////////////////////user///////////////////////////////////////////////////
+        db.execSQL("insert into user (userloginname,password)"+
+                "values ('ahmed','1234')");
+
+        db.execSQL("insert into user (userloginname,password)"+
+                "values ('farah','1234')");
+
+        db.execSQL("insert into user (userloginname,password)"+
+                "values ('moe','1234')");
+        ////////////////////////////////////userinfo////////////////////////////////////////////////
+        db.execSQL("insert into userinfo (username,password,age,height,weight,sex,userloginname)"+
+                "values ('ahmed','1234',22,1.70,65,'M','ahmed')");
+
+        db.execSQL("insert into userinfo (username,password,age,height,weight,sex,userloginname)"+
+                "values ('farah','1234',20,1.60,65,'F','farah')");
+
+        db.execSQL("insert into userinfo (username,password,age,height,weight,sex,userloginname)"+
+                "values ('moe','1234',25,1.80,85,'M','moe')");
+        ///////////////////////////////////////meal////////////////////////////////////////////
+        db.execSQL("insert into meal (mealName,mealCalorie)"+
+                "values ('Rice & Chicken',448)");
+
+        db.execSQL("insert into meal (mealName,mealCalorie)"+
+                "values ('Grilled 100g Steak',271)");
+
+        db.execSQL("insert into meal (mealName,mealCalorie)"+
+                "values ('Macand Chease',164)");
+        ///////////////////////////////////food////////////////////////////////////////////////
+        db.execSQL("insert into food (foodName,calories)"+
+                "values ('Chicken Breast',165 )");
+
+        db.execSQL("insert into food (foodName,calories)"+
+                "values ('Banana',89  )");
+
+        db.execSQL("insert into food (foodName,calories)"+
+                "values ('Steak',271  )");
+        //////////////////////////////////contains/////////////////////////////////////////////////
+        db.execSQL("insert into contains (foodName,mealName)"+
+                "values ('Chicken Breast','Rice & chicken' )");
+
+        db.execSQL("insert into contains (foodName,mealName)"+
+                "values ('Banana','fruit Salad')");
+
+        db.execSQL("insert into contains (foodName,mealName)"+
+                "values ('Strawberry','Fruit Salad')");
+
     }
 
     @Override
