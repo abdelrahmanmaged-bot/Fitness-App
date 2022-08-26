@@ -25,16 +25,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 boolean cheack= DB.checkusernamepassword(user,pass);
+                if (username.length()==0 ||password.length()==0) {
+                    Toast.makeText(MainActivity.this, "enter all fields", Toast.LENGTH_LONG).show();
+                }else{
+                    if (cheack) {
 
-                    if(cheack){
-                        //System.out.println("ana in");
-                        Toast.makeText(MainActivity.this,"hi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, bmi_calc_activity.class);
                         startActivity(intent);
-                   }else {
-                       // System.out.println("ana out ");
+                    }
+                    else {
+
                         Toast.makeText(MainActivity.this, "wrong user name or password", Toast.LENGTH_SHORT).show();
                     }
+                }
             }
 
 

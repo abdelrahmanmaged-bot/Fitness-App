@@ -17,16 +17,18 @@ public class bmi_calc_activity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button calcBtn = (Button) findViewById(R.id.btn_BMI_Calculator);
+        BMI_Calculator bmi_calculator = new BMI_Calculator();
+        EditText tmpText1 = (EditText) findViewById(R.id.wight_text);
+        EditText tmpText2 = (EditText) findViewById(R.id.height_text);
+        TextView view1 = (TextView) findViewById(R.id.result);
+        float temp1 = Float.parseFloat(tmpText1.getText().toString());
+        float temp2 = Float.parseFloat(tmpText2.getText().toString());
         calcBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
+            //@Override
             public void onClick(View view) {
-                BMI_Calculator bmi_calculator = new BMI_Calculator();
-                EditText tmpText1 = (EditText) findViewById(R.id.wight_text);
-                EditText tmpText2 = (EditText) findViewById(R.id.height_text);
-                TextView view1 = (TextView) findViewById(R.id.result);
+
                 if(!(tmpText1.getText().toString().equals("")) && !(tmpText2.getText().toString().equals(""))&&!(Float.parseFloat(tmpText1.getText().toString())<=0)&&!(Float.parseFloat(tmpText2.getText().toString())<=0)){
-                    float temp1 = Float.parseFloat(tmpText1.getText().toString());
-                    float temp2 = Float.parseFloat(tmpText2.getText().toString());
+
                     bmi_calculator.setWeight(temp1);
                     bmi_calculator.setHeight(temp2);
                     view1.setText(String.valueOf(bmi_calculator.bmi_calculator()));

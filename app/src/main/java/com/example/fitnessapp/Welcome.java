@@ -12,17 +12,17 @@ public class Welcome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_welcome);
+            Button BtnWelcom=(Button) findViewById(R.id.btnWelcome);
+            BtnWelcom.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i=new Intent(Welcome.this,EnterName.class);
+                    startActivity(i);
+                }
+            });
 
-        Button btnWelcome = findViewById(R.id.btnWelcome);
-
-        btnWelcome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Welcome.this, ChooseGender.class);
-                startActivity(i);
-            }
-        });
 
     }
 }

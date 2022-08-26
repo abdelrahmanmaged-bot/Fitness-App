@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -112,6 +113,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS contains");
         onCreate(db);
     }
+
    public boolean check_user(String username){
 db=getReadableDatabase();
         Cursor user_pass=db.rawQuery("select * from user where userloginname= ?",new String[]{username});
