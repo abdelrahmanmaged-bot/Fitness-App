@@ -4,6 +4,11 @@ public class BMI_Calculator {
     private float height;
     private float weight;
 
+    public BMI_Calculator(float height, float weight) {
+        this.height = height;
+        this.weight = weight;
+    }
+
     public float getHeight() {
         return height;
     }

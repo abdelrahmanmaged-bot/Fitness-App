@@ -11,7 +11,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String databaseName="fitnessAppDatabase";
 
-    private static final int databaseVersion = 1;
+    private static final int databaseVersion = 5;
 
     private static final String table_name="userinfo";
     private static final String username_col="username";

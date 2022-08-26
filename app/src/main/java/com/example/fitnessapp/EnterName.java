@@ -31,18 +31,20 @@ public class EnterName extends AppCompatActivity {
                     Toast.makeText(EnterName.this, "Please enter username", Toast.LENGTH_SHORT).show();
                 }
                 String pass = txtPass.getText().toString();
-                if (name.isEmpty()){
+                if (pass.isEmpty()){
                     Toast.makeText(EnterName.this, "Please enter password", Toast.LENGTH_SHORT).show();
+                }else {
+
+                    dbHandler.addNewUsername(name);
+                    dbHandler.addNewPassword(pass);
+                    Toast.makeText(EnterName.this, "Username has been added", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EnterName.this, ChooseGender.class);
+                    startActivity(intent);
+
                 }
-
-                dbHandler.addNewUsername(name);
-                dbHandler.addNewPassword(pass);
-
-                Toast.makeText(EnterName.this, "Username has been added", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(EnterName.this, ChooseGender.class);
-                startActivity(intent);
             }
+
+
         });
 
 

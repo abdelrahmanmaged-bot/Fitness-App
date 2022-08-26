@@ -34,6 +34,10 @@ public class ChooseGender extends AppCompatActivity {
                 else {
                     RadioButton checked = findViewById(gender.getCheckedRadioButtonId());
                     String checkedGender = checked.getText().toString();
+
+                    Toast.makeText(getApplicationContext(), "Gender has been added", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(ChooseGender.this, ChooseAge.class);
+                    startActivity(i);
                     if (checkedGender.equals("Male"))
                     {
                         dbHandler.addNewSex("Male");
@@ -41,10 +45,6 @@ public class ChooseGender extends AppCompatActivity {
                     else if (checkedGender.equals("Female")) {
                         dbHandler.addNewSex("Female");
                     }
-                    Toast.makeText(getApplicationContext(), "Gender has been added", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(ChooseGender.this, ChooseAge.class);
-                    startActivity(i);
-
                 }
             }
         });
