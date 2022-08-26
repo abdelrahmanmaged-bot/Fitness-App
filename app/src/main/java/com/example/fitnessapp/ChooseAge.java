@@ -15,6 +15,7 @@ public class ChooseAge extends AppCompatActivity {
     private TextView selected;
     private NumberPicker numPick;
     private Button btnContinue;
+    private MyDatabaseHelper dbHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,8 @@ public class ChooseAge extends AppCompatActivity {
         numPick.setMaxValue(120);
         numPick.setValue(18);
 
+        dbHandler = new MyDatabaseHelper(ChooseAge.this);
+
         numPick.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int oldValue, int newValue) {
@@ -38,6 +41,7 @@ public class ChooseAge extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (numPick.getValue() < 18) {
                     Toast.makeText(getApplicationContext(), "You're too young for this, kiddo", Toast.LENGTH_SHORT).show();
                 }
@@ -45,6 +49,9 @@ public class ChooseAge extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You should be dead, grandpa", Toast.LENGTH_SHORT).show();
                 }
                 else {
+
+                    dbHandler.addNewAge(numPick.toString());
+                    Toast.makeText(getApplicationContext(), "Age has been added", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(ChooseAge.this, ChooseActivityLevel.class);
                     startActivity(i);
                 }

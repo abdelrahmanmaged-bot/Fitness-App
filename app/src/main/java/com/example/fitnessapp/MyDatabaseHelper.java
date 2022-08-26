@@ -11,15 +11,28 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String databaseName="fitnessAppDatabase";
 
+    private static final int databaseVersion = 1;
+
+    private static final String table_name="userinfo";
+    private static final String username_col="username";
+    private static final String password_col="password";
+    private static final String age_col="age";
+    private static final String height_col="height";
+    private static final String weight_col="weight";
+    private static final String weightGoal_col="weightGoal";
+    private static final String sex_col="sex";
+
+
     private final String userInfoTableCreation =
-            "create table userinfo(username text primary key, "+
-                    "password text, "+
-                    "age integer, "+
-                    "height integer, "+
-                    "weight integer, "+
-                    "sex text, "+
-                    "userloginname text," +
-                    "FOREIGN KEY(userloginname) references user(userloginname));";
+            "CREATE TABLE " + table_name + " ("
+            +username_col + " text primary key, "
+            +password_col + "text,"
+            +age_col + "text,"
+            +height_col + "text,"
+            +weight_col + "text,"
+            +weightGoal_col + "text,"
+            +sex_col + "text)";
+
     private final String userTableCreation =
             "create table user(userloginname text primary key, "+
                     "password text);";
@@ -42,7 +55,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase db;
 
     public MyDatabaseHelper(Context context){
-        super(context, databaseName, null, 5);
+        super(context, databaseName, null, databaseVersion);
     }
 
     @Override
@@ -106,7 +119,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS userinfo");
+        db.execSQL("DROP TABLE IF EXISTS " + table_name);
         db.execSQL("DROP TABLE IF EXISTS user");
         db.execSQL("DROP TABLE IF EXISTS meal");
         db.execSQL("DROP TABLE IF EXISTS food");
@@ -133,4 +146,66 @@ Cursor mydb =db.rawQuery("select * from user where userloginname =? and password
         //System.out.println("rrrrrrr");
         return false ;
     }
+
+    public void addNewUsername(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(username,username_col);
+
+        db.insert(table_name,null,values);
+        db.close();
+    }
+    public void addNewPassword(String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(password,password_col);
+        db.insert(table_name,null,values);
+        db.close();
+    }
+    public void addNewAge(String age){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(age,age_col);
+
+        db.insert(table_name,null,values);
+        db.close();
+    }
+    public void addNewHeight(String height){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(height,height_col);
+
+
+        db.insert(table_name,null,values);
+        db.close();
+    }
+    public void addNewWeight(String weight){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(weight,weight_col);
+
+
+        db.insert(table_name,null,values);
+        db.close();
+    }
+
+    public void addNewWeightGoal(String weightgoal){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(weightgoal,weightGoal_col);
+
+
+        db.insert(table_name,null,values);
+        db.close();
+    }
+
+    public void addNewSex(String sex){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(sex,sex_col);
+
+        db.insert(table_name,null,values);
+        db.close();
+    }
+
 }

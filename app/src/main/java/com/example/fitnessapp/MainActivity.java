@@ -43,7 +43,7 @@ boolean cheack= DB.checkusernamepassword(user,pass);
 
 
         });
-//reigster button
+        //reigster button
         Button register= findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
