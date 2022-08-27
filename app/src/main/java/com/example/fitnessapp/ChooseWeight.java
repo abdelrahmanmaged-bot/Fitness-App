@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class ChooseWeight extends AppCompatActivity {
 
+    private MyDatabaseHelper dbHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,9 @@ public class ChooseWeight extends AppCompatActivity {
         Button btnContinue = findViewById(R.id.btnContinue);
         EditText txtCurrent = findViewById(R.id.txtCurrent);
         EditText txtGoal = findViewById(R.id.txtGoal);
+
+        dbHandler = new MyDatabaseHelper(ChooseWeight.this);
+
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +37,8 @@ public class ChooseWeight extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Do you think this is funny?", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    dbHandler.addNewWeight(txtCurrent.toString());
+                    dbHandler.addNewWeightGoal(txtGoal.toString());
                     Intent i = new Intent(ChooseWeight.this, ChooseHeight.class);
                     startActivity(i);
                 }

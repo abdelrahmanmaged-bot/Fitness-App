@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChooseGender extends AppCompatActivity {
+    private MyDatabaseHelper dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,9 @@ public class ChooseGender extends AppCompatActivity {
 
         RadioGroup gender = findViewById(R.id.genderRG);
         Button btnContinue = findViewById(R.id.btnContinue);
+
+        dbHandler = new MyDatabaseHelper(ChooseGender.this);
+
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,16 +34,17 @@ public class ChooseGender extends AppCompatActivity {
                 else {
                     RadioButton checked = findViewById(gender.getCheckedRadioButtonId());
                     String checkedGender = checked.getText().toString();
-                    if (checkedGender.equals("Male"))
-                    {
-//                        ((User) this.getApplication()).setGender(true);
-                    }
-                    else if (checkedGender.equals("Female")) {
 
-                    }
+                    Toast.makeText(getApplicationContext(), "Gender has been added", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(ChooseGender.this, ChooseAge.class);
                     startActivity(i);
-
+                    if (checkedGender.equals("Male"))
+                    {
+                        dbHandler.addNewSex("Male");
+                    }
+                    else if (checkedGender.equals("Female")) {
+                        dbHandler.addNewSex("Female");
+                    }
                 }
             }
         });
