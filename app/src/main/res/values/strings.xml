@@ -13,4 +13,10 @@
     <string name="login">login</string>
     <string name="type_your_weight">Type Your Weight</string>
     <string name="weight_kg">Weight (KG)</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="weight1">Weight</string>
+    <string name="calculate_bmi">calculate BMI
+    </string><string name="result">Result</string>
+    <string name="height1">Height</string>
 </resources>
