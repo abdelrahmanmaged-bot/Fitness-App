@@ -11,4 +11,6 @@
     <string name="password">password</string>
     <string name="sign_in">sign in</string>
     <string name="login">login</string>
+    <string name="type_your_weight">Type Your Weight</string>
+    <string name="weight_kg">Weight (KG)</string>
 </resources>

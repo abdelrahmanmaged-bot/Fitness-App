@@ -8,41 +8,13 @@
     android:padding="10dp">
 
     <TextView
+        android:id="@+id/lblCurrent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type Current Weight"
-        android:textSize="25sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:id="@+id/lblCurrent" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_below="@id/lblCurrent"
-        android:layout_marginTop="20dp"
-        android:hint="Current Weight (KG)"
-        android:id="@+id/txtCurrent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type Goal Weight"
-        android:textSize="25sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/txtCurrent"
-        android:layout_marginTop="50dp"
-        android:id="@+id/lblGoal" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_below="@id/lblGoal"
-        android:layout_marginTop="20dp"
-        android:hint="Goal Weight (KG)"
-        android:id="@+id/txtGoal"/>
+        android:text="@string/type_your_weight"
+        android:textSize="25sp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -53,5 +25,18 @@
         android:layout_marginBottom="50dp"
         android:textSize="20sp"
         android:id="@+id/btnContinue"/>
+
+    <EditText
+        android:id="@+id/txtCurrent"
+        android:layout_width="396dp"
+        android:layout_height="463dp"
+        android:layout_above="@+id/btnContinue"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="124dp"
+        android:layout_marginBottom="27dp"
+        android:autofillHints="weight"
+        android:hint="@string/weight_kg"
+        android:textSize="20sp"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </RelativeLayout>

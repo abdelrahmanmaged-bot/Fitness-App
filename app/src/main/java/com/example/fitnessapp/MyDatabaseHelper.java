@@ -21,7 +21,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String weight_col="weight";
     private static final String weightGoal_col="weightGoal";
     private static final String sex_col="sex";
-
+    String userInfoTableCreation =
+            "CREATE TABLE " + table_name+"("
+                    +"username_col text primary key, "
+                    +"password_col text,"
+                    +"age_col text,"
+                    +"height_col text,"
+                    +"weight_col text,"
+                    +"weightGoal_col text,"
+                    +"sex_col text)";
 
 
 
@@ -48,19 +56,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public MyDatabaseHelper(Context context){
         super(context, databaseName, null, databaseVersion);
+       // onUpgrade(db,5,5);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-          String userInfoTableCreation =
-                "CREATE TABLE " + table_name+"("
-                        +"username_col text primary key, "
-                        +"password_col text,"
-                        +"age_col text,"
-                        +"height_col text,"
-                        +"weight_col text,"
-                        +"weightGoal_col text,"
-                        +"sex_col text)";
+
         db.execSQL(userInfoTableCreation);
         db.execSQL(userTableCreation);
         db.execSQL(mealTableCreation);
@@ -140,33 +141,31 @@ db=getReadableDatabase();
 SQLiteDatabase db=this.getReadableDatabase();
 Cursor mydb =db.rawQuery("select * from user where userloginname =? and password = ?",new String[]{user_name,password});
     if(mydb.getCount()==0) {
-        //System.out.println(mydb.getCount());
-      //System.out.println("ttttt");
+
         return true;}
     else
-        //System.out.println("rrrrrrr");
         return false ;
     }
 
     public void addNewUsername(String usernamelog){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(usernamelog,username_col);
-       /*db.insert(table_name,null,values);*/
+        values.put(username_col,usernamelog);
+       db.insert(table_name,null,values);
         db.close();
     }
     public void addNewPassword(String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(password,password_col);
-        /*db.insert(table_name,null,values);*/
+        values.put(password_col,password);
+        db.insert(table_name,null,values);
 
         db.close();
     }
     public void addNewAge(String age){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(age,age_col);
+        values.put(age_col,age);
 
         db.insert(table_name,null,values);
         db.close();
@@ -174,7 +173,7 @@ Cursor mydb =db.rawQuery("select * from user where userloginname =? and password
     public void addNewHeight(String height){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(height,height_col);
+        values.put(height_col,height);
 
 
         db.insert(table_name,null,values);
@@ -183,7 +182,7 @@ Cursor mydb =db.rawQuery("select * from user where userloginname =? and password
     public void addNewWeight(String weight){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(weight,weight_col);
+        values.put(weight_col,weight);
 
 
         db.insert(table_name,null,values);
@@ -193,7 +192,7 @@ Cursor mydb =db.rawQuery("select * from user where userloginname =? and password
     public void addNewWeightGoal(String weightgoal){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(weightgoal,weightGoal_col);
+        values.put(weightGoal_col,weightgoal);
 
 
         db.insert(table_name,null,values);
@@ -203,7 +202,7 @@ Cursor mydb =db.rawQuery("select * from user where userloginname =? and password
     public void addNewSex(String sex){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(sex,sex_col);
+        values.put(sex_col,sex);
 
         db.insert(table_name,null,values);
         db.close();
