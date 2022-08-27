@@ -5,21 +5,21 @@ public class BMI_Calculator {
     private float weight;
 
     public BMI_Calculator(float height, float weight) {
-        this.height = height;
-        this.weight = weight;
+        this.height =0;
+        this.weight =0;
     }
 
-    public float getHeight() {
+   /* public float getHeight() {
         return height;
-    }
+    }*/
 
     public void setHeight(float height) {
         this.height = height;
     }
 
-    public float getWeight() {
+   /* public float getWeight() {
         return weight;
-    }
+    }*/
 
     public void setWeight(float weight) {
         this.weight = weight;
