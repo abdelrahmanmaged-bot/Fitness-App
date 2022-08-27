@@ -17,6 +17,7 @@
     <string name="height">Height</string>
     <string name="weight1">Weight</string>
     <string name="calculate_bmi">calculate BMI
-    </string><string name="result">Result</string>
+    </string>
+    <string name="result">Result</string>
     <string name="height1">Height</string>
 </resources>
