@@ -23,15 +23,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String sex_col="sex";
 
 
-    private final String userInfoTableCreation =
-            "CREATE TABLE " + table_name + " ("
-            +username_col + " text primary key, "
-            +password_col + "text,"
-            +age_col + "text,"
-            +height_col + "text,"
-            +weight_col + "text,"
-            +weightGoal_col + "text,"
-            +sex_col + "text)";
+
 
     private final String userTableCreation =
             "create table user(userloginname text primary key, "+
@@ -60,6 +52,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+          String userInfoTableCreation =
+                "CREATE TABLE " + table_name+"("
+                        +"username_col text primary key, "
+                        +"password_col text,"
+                        +"age_col text,"
+                        +"height_col text,"
+                        +"weight_col text,"
+                        +"weightGoal_col text,"
+                        +"sex_col text)";
         db.execSQL(userInfoTableCreation);
         db.execSQL(userTableCreation);
         db.execSQL(mealTableCreation);
@@ -147,19 +148,19 @@ Cursor mydb =db.rawQuery("select * from user where userloginname =? and password
         return false ;
     }
 
-    public void addNewUsername(String username){
+    public void addNewUsername(String usernamelog){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(username,username_col);
-
-        db.insert(table_name,null,values);
+        values.put(usernamelog,username_col);
+       /*db.insert(table_name,null,values);*/
         db.close();
     }
     public void addNewPassword(String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(password,password_col);
-        db.insert(table_name,null,values);
+        /*db.insert(table_name,null,values);*/
+
         db.close();
     }
     public void addNewAge(String age){
