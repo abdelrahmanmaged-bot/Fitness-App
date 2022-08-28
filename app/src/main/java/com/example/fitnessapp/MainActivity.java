@@ -33,7 +33,7 @@ boolean cheack= DB.checkusernamepassword(user,pass);
                     if (cheack) {
 
                         Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, AddPR.class);
+                        Intent intent = new Intent(MainActivity.this, MainPage.class);
                         startActivity(intent);
                     }
                     else {
